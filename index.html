@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparativo Agnóstico | Genesys Cloud CX vs Cisco Webex Contact Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --genesys: #ff5a1f;
+      --webex: #1f6feb;
+      --ink: #132238;
+      --muted: #5b6472;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --line: #d9e0ea;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); }
+    .topic-btn.active { background: #e8eefc; color: #173f9e; border-color: #b8c7f0; }
+    .topic-panel { display: none; animation: fadeIn .25s ease; }
+    .topic-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: 0 8px 24px rgba(16,24,40,.06); }
+    .pill { display: inline-flex; align-items: center; border-radius: 9999px; padding: .35rem .75rem; font-size: .85rem; font-weight: 600; }
+    .table-wrap { overflow-x: auto; }
+    th, td { vertical-align: top; }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.22em] text-slate-500">Comparativo agnóstico de plataformas CX</p>
+        <h1 class="text-xl md:text-2xl font-bold">Genesys Cloud CX vs Cisco Webex Contact Center</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-5 text-sm font-medium text-slate-600">
+        <a href="#resumen" class="hover:text-slate-900">Resumen</a>
+        <a href="#narrativas" class="hover:text-slate-900">Narrativas</a>
+        <a href="#capacidades" class="hover:text-slate-900">Capacidades</a>
+        <a href="#fortalezas" class="hover:text-slate-900">Fortalezas</a>
+        <a href="#metricas" class="hover:text-slate-900">Métricas</a>
+        <a href="#decision" class="hover:text-slate-900">Cómo elegir</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20 grid lg:grid-cols-[1.25fr_.9fr] gap-10 items-center">
+      <div>
+        <span class="pill bg-white/10 text-white border border-white/15 mb-4">Visión abierta</span>
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight">Una lectura abierta para comparar dos enfoques válidos de CX cloud y el CCaaS.</h2>
+        <p class="mt-5 text-lg text-slate-200 max-w-3xl">El objetivo es entender dónde cada plataforma suele destacar, dónde puede requerir más diseño o gobierno, y qué tipo de organización obtiene más valor de cada una.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="pill bg-white text-slate-900">Experiencia orquestada</span>
+          <span class="pill bg-white text-slate-900">Colaboración + contact center</span>
+          <span class="pill bg-white text-slate-900">AI, WEM, omnicanalidad</span>
+          <span class="pill bg-white text-slate-900">Modelo operativo y madurez</span>
+        </div>
+      </div>
+      <div class="card p-6 bg-white text-slate-900">
+        <h3 class="text-lg font-semibold mb-4">Contexto</h3>
+        <div class="space-y-4 text-sm leading-6 text-slate-700">
+          <p><strong>Genesys Cloud CX</strong> suele ser percibido como una plataforma más centrada en <strong>experience orchestration</strong>, automatización avanzada, AI conversacional y operación end-to-end.</p>
+          <p><strong>Cisco Webex Contact Center</strong> suele ser percibido como una propuesta fuerte cuando la prioridad es <strong>integración con colaboración empresarial</strong>, estandarización operativa, voz y alineación con el ecosistema Cisco.</p>
+          <p>Mencionar si una es “mejor o peor”; depende del objetivo como puede ser:<strong>la madurez CX</strong>, complejidad de journeys, estrategia de AI, modelo comercial y estándar tecnológico del cliente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-16">
+    <section id="resumen">
+      <div class="mb-8 card p-6 bg-amber-50 border border-amber-200">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">Contexto típoco</p>
+        <p class="mt-3 text-slate-700 leading-7">En operaciones como FX o equipos comerciales financieros, es común enfrentar retos como falta de evidencia en cierres, disputas con clientes sobre autorizaciones, dificultad para rastrear qué agente habló con quién, y baja visibilidad sobre productividad real. Cuando estas áreas crecen rápidamente sin un modelo estructurado, aparecen riesgos regulatorios, inconsistencias operativas y dependencia de interpretaciones humanas en lugar de datos verificables.</p>
+      </div>
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Resumen de SaaS</p>
+          <h3 class="text-3xl font-bold">Dos plataformas, dos centros de gravedad</h3>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-7">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-3 h-3 rounded-full" style="background: var(--genesys);"></span>
+            <h4 class="text-xl font-semibold">Genesys Cloud CX</h4>
+          </div>
+          <p class="text-slate-700 leading-7">Se posiciona como una plataforma enfocada en orquestar experiencias de cliente de extremo a extremo. Sus prioridades son el journey orchestration, IA nativa, automatización, WEM y una arquitectura cloud-first para operaciones que pueden ir de lo simple a lo complejo.</p>
+          <div class="mt-5 grid grid-cols-2 gap-3 text-sm">
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Enfoque:</strong><br>Experience orchestration</div>
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Fortaleza típica:</strong><br>Profundidad funcional</div>
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Valor común:</strong><br>Automatización y contexto</div>
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Trade-off usual:</strong><br>Mayor diseño y gobierno</div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-3 h-3 rounded-full" style="background: var(--webex);"></span>
+            <h4 class="text-xl font-semibold">Cisco Webex Contact Center</h4>
+          </div>
+          <p class="text-slate-700 leading-7">Suele destacar cuando el cliente busca un contact center fuertemente alineado al ecosistema de colaboración Cisco/Webex, con fortaleza en voz, operaciones empresariales, adopción dentro de cuentas Cisco y una narrativa de continuidad entre UCaaS, colaboración y atención.</p>
+          <div class="mt-5 grid grid-cols-2 gap-3 text-sm">
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Enfoque:</strong><br>Collaboration + contact center</div>
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Fortaleza típica:</strong><br>Integración ecosistema Cisco</div>
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Valor común:</strong><br>Estandarización operativa</div>
+            <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><strong>Trade-off usual:</strong><br>Profundidad variable por componente</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="narrativas">
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Comparativas</p>
+        <h3 class="text-3xl font-bold">¿Cómo se cuentan a sí mismas estas plataformas?</h3>
+      </div>
+      <div class="grid lg:grid-cols-[280px_1fr] gap-6">
+        <div class="card p-4 h-fit">
+          <button class="topic-btn active w-full text-left rounded-2xl border border-slate-200 px-4 py-3 mb-3 transition" data-topic="topic-1">Objetivo principal</button>
+          <button class="topic-btn w-full text-left rounded-2xl border border-slate-200 px-4 py-3 mb-3 transition" data-topic="topic-2">¿Qué prometen al negocio?</button>
+          <button class="topic-btn w-full text-left rounded-2xl border border-slate-200 px-4 py-3 mb-3 transition" data-topic="topic-3">¿Dónde suelen destacar?</button>
+          <button class="topic-btn w-full text-left rounded-2xl border border-slate-200 px-4 py-3 mb-3 transition" data-topic="topic-4">¿Dónde suelen requerir atención?</button>
+        </div>
+        <div>
+          <div id="topic-1" class="topic-panel active card p-7">
+            <h4 class="text-2xl font-semibold mb-4">Objetivo principal</h4>
+            <div class="grid md:grid-cols-2 gap-6 text-slate-700 leading-7">
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Genesys</h5>
+                <p>Presentarse como una plataforma integral para unificar canales, contexto, automatización, journey management y operación del agente dentro de una misma visión de experiencia.</p>
+              </div>
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Cisco Webex</h5>
+                <p>Presentarse como una solución que extiende el valor del ecosistema Webex desde colaboración y voz hacia el contact center, con una propuesta fuerte para cuentas ya estandarizadas en Cisco.</p>
+              </div>
+            </div>
+          </div>
+          <div id="topic-2" class="topic-panel card p-7">
+            <h4 class="text-2xl font-semibold mb-4">¿Qué prometen al negocio?</h4>
+            <div class="grid md:grid-cols-2 gap-6 text-slate-700 leading-7">
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Genesys</h5>
+                <p>Promete reducir esfuerzo, elevar contención, mejorar FCR, habilitar journeys inteligentes y conectar experiencia de cliente con desempeño operativo.</p>
+              </div>
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Cisco Webex</h5>
+                <p>Promete simplificar la adopción dentro de entornos Cisco, aprovechar capacidades de colaboración, soportar voz a escala y modernizar operaciones sin romper el estándar empresarial existente.</p>
+              </div>
+            </div>
+          </div>
+          <div id="topic-3" class="topic-panel card p-7">
+            <h4 class="text-2xl font-semibold mb-4">¿Dónde suelen destacar?</h4>
+            <div class="grid md:grid-cols-2 gap-6 text-slate-700 leading-7">
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Genesys</h5>
+                <p>Journey orchestration, AI conversacional, WEM, diseño de automatización avanzada, amplitud de APIs, enfoque cloud y proyectos con alta complejidad CX.</p>
+              </div>
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Cisco Webex</h5>
+                <p>Voz empresarial, integración con Webex, presencia en cuentas enterprise, continuidad con infraestructura Cisco y adopción natural cuando TI ya opera dentro del stack Cisco.</p>
+              </div>
+            </div>
+          </div>
+          <div id="topic-4" class="topic-panel card p-7">
+            <h4 class="text-2xl font-semibold mb-4">¿Dónde suelen requerir atención?</h4>
+            <div class="grid md:grid-cols-2 gap-6 text-slate-700 leading-7">
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Genesys</h5>
+                <p>Puede exigir más claridad en roadmap, ownership, diseño de journeys y gobierno del cambio para capturar todo su valor; no siempre es la opción más simple para organizaciones con madurez baja.</p>
+              </div>
+              <div>
+                <h5 class="font-semibold text-slate-900 mb-2">Cisco Webex</h5>
+                <p>Dependiendo del caso, ciertas capacidades avanzadas pueden apoyarse más en múltiples componentes, terceros o capas complementarias, lo que vuelve importante revisar profundidad funcional y costo total.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capacidades">
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Capacidades clave</p>
+        <h3 class="text-3xl font-bold">Comparativo funcional neutral</h3>
+      </div>
+      <div class="table-wrap card p-2">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left border-b border-slate-200 bg-slate-50">
+              <th class="p-4 font-semibold">Categoría</th>
+              <th class="p-4 font-semibold">Genesys Cloud CX</th>
+              <th class="p-4 font-semibold">Cisco Webex Contact Center</th>
+              <th class="p-4 font-semibold">Lectura agnóstica</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700">
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">AI y automatización</td>
+              <td class="p-4">Narrativa fuerte en AI nativa, routing predictivo, virtual agents, copilots y automatización de journeys.</td>
+              <td class="p-4">Narrativa creciente en AI assistants, voice y automatización integrada a Webex, con foco en reforzar su portafolio.</td>
+              <td class="p-4">Genesys suele percibirse más maduro en AI CX profunda; Cisco avanza apoyándose en su ecosistema y nuevas capacidades.</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">Journey orchestration</td>
+              <td class="p-4">Capacidad central del posicionamiento de plataforma.</td>
+              <td class="p-4">Más énfasis en routing, operación e integración que en una narrativa tan fuerte de journey nativo.</td>
+              <td class="p-4">Si el diferenciador del cliente es el journey cross-channel, Genesys suele entrar con ventaja conceptual.</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">Omnicanalidad</td>
+              <td class="p-4">Contexto continuo y visión de experiencia unificada entre canales.</td>
+              <td class="p-4">Cobertura omnicanal con fortaleza especial cuando convive con colaboración y voz en entorno Cisco.</td>
+              <td class="p-4">Ambos cubren omnicanalidad, pero el matiz está en continuidad de contexto vs alineación al stack corporativo.</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">WEM / WFM / QM</td>
+              <td class="p-4">Suele presentar una suite más integrada y madura.</td>
+              <td class="p-4">Puede apoyarse en capacidades parciales o complementarias según la necesidad.</td>
+              <td class="p-4">Revisar nivel de profundidad requerido por operaciones, supervisión, calidad y coaching.</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">Developer ecosystem</td>
+              <td class="p-4">Narrativa de extensibilidad amplia, APIs y marketplace robusto.</td>
+              <td class="p-4">Cisco también mantiene recursos de desarrollo y fortalezas para clientes con perfil técnico y ecosistema DevNet.</td>
+              <td class="p-4">La diferencia no es solo “más APIs”, sino cuánta extensibilidad necesita el caso y bajo qué modelo de gobierno.</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Arquitectura y despliegue</td>
+              <td class="p-4">Cloud-native, fuerte narrativa de microservicios y unificación.</td>
+              <td class="p-4">Hereda fortaleza enterprise de Cisco y flexibilidad en cuentas con historia de infraestructura y voz.</td>
+              <td class="p-4">La decisión depende de si el cliente privilegia pureza cloud CX o alineación con arquitectura Cisco existente.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="fortalezas">
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Fortalezas y consideraciones</p>
+        <h3 class="text-3xl font-bold">Lo mejor y lo más delicado de cada enfoque</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-7">
+          <h4 class="text-xl font-semibold mb-4">Genesys Cloud CX</h4>
+          <div class="grid gap-5">
+            <div>
+              <h5 class="font-semibold mb-2">Fortalezas frecuentes</h5>
+              <ul class="list-disc ml-5 text-slate-700 space-y-2 leading-7">
+                <li>Plataforma unificada con narrativa sólida de orquestación CX.</li>
+                <li>Mayor percepción de profundidad en AI, automatización y journeys.</li>
+                <li>WEM y operación del agente más integrados para escenarios complejos.</li>
+                <li>Buena afinidad con transformaciones digitales orientadas a experiencia y valor de negocio.</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="font-semibold mb-2">Puntos a evaluar con cuidado</h5>
+              <ul class="list-disc ml-5 text-slate-700 space-y-2 leading-7">
+                <li>Puede requerir más madurez organizacional y claridad de diseño para capturar el valor completo.</li>
+                <li>La conversación siempre esta aterrizarda a resultados, y no solo a funcionalidades.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <h4 class="text-xl font-semibold mb-4">Cisco Webex Contact Center</h4>
+          <div class="grid gap-5">
+            <div>
+              <h5 class="font-semibold mb-2">Fortalezas frecuentes</h5>
+              <ul class="list-disc ml-5 text-slate-700 space-y-2 leading-7">
+                <li>Muy buena alineación con clientes que ya operan Webex, voz Cisco o infraestructura Cisco.</li>
+                <li>Fortaleza en voz, colaboración y presencia enterprise.</li>
+                <li>Adopción más natural cuando el equipo de TI privilegia continuidad tecnológica y estandarización.</li>
+                <li>Buena narrativa para consolidar UCaaS, colaboración y contact center.</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="font-semibold mb-2">Puntos a evaluar con cuidado</h5>
+              <ul class="list-disc ml-5 text-slate-700 space-y-2 leading-7">
+                <li>En escenarios CX avanzados conviene revisar la profundidad nativa de journey, WEM, outbound y AI.</li>
+                <li>El costo total puede depender de cómo se componga la solución y qué piezas complementarias intervienen.</li>
+                <li>La fortaleza de ecosistema no sustituye por sí sola una estrategia CX bien diseñada.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metricas">
+      <div class="mb-8 card p-6 bg-slate-50 border border-slate-200">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Lectura contextual</p>
+        <p class="mt-3 text-slate-700 leading-7">En escenarios donde cada interacción representa una transacción sensible o potencialmente disputable, las plataformas no solo se evalúan por su capacidad de comunicar, sino por su capacidad de generar trazabilidad, contexto histórico y control operativo. La diferencia práctica suele estar en qué tan fácil es reconstruir una conversación, entender decisiones tomadas y auditar el comportamiento del equipo sin ambigüedad.</p>
+      </div>
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Lectura por impacto</p>
+        <h3 class="text-3xl font-bold">¿Dónde suele aportar valor cada plataforma?</h3>
+      </div>
+      <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-6 items-start">
+        <div class="card p-6">
+          <canvas id="impactChart" height="180"></canvas>
+        </div>
+        <div class="card p-7">
+          <h4 class="text-xl font-semibold mb-4">¿Qué nos dicen los datos?</h4>
+          <div class="space-y-4 text-slate-700 leading-7">
+            <p>La visualización no pretende declarar un ganador. Resume la narrativa típica de valor observada en el material comparativo y en cómo ambas plataformas suelen entrar en conversación.</p>
+            <p><strong>Genesys</strong> tiende a asociarse con mejora en customer experience, contención , personalización, journey continuity, productividad del agente y uso de AI-First de cara al cliente, agente y supervisores.</p>
+            <p><strong>Cisco Webex</strong> tiende a asociarse con estandarización operativa, voz empresarial, experiencia consistente en entornos Cisco y despliegues bien alineados a colaboración.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Casos de uso</p>
+        <h3 class="text-3xl font-bold">Escenarios donde cada uno suele encajar mejor</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-7">
+          <h4 class="text-xl font-semibold mb-4">Genesys suele encajar mejor cuando...</h4>
+          <ul class="list-disc ml-5 text-slate-700 space-y-2 leading-7">
+            <li>El objetivo es rediseñar journeys de cliente de extremo a extremo.</li>
+            <li>La organización quiere elevar automatización, contención y personalización con AI.</li>
+            <li>Se requiere una visión más integrada entre canales, bots, routing y desempeño del agente.</li>
+            <li>El patrocinio ejecutivo busca impacto en CX, eficiencia y valor de negocio simultáneamente.</li>
+          </ul>
+        </div>
+        <div class="card p-7">
+          <h4 class="text-xl font-semibold mb-4">Cisco suele encajar mejor cuando...</h4>
+          <ul class="list-disc ml-5 text-slate-700 space-y-2 leading-7">
+            <li>La organización ya está estandarizada en Cisco/Webex y quiere extender ese modelo al contact center.</li>
+            <li>La prioridad es continuidad de voz, colaboración y adopción operativa dentro de TI.</li>
+            <li>El programa privilegia consolidación tecnológica más que transformación CX profunda en una primera etapa.</li>
+            <li>El cliente valora especialmente el peso de la relación Cisco dentro de infraestructura enterprise.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Framework de decisión</p>
+        <h3 class="text-3xl font-bold">Preguntas correctas para elegir sin sesgo</h3>
+      </div>
+      <div class="card p-2 table-wrap">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left border-b border-slate-200 bg-slate-50">
+              <th class="p-4 font-semibold">Pregunta</th>
+              <th class="p-4 font-semibold">Si la respuesta se inclina hacia esto...</th>
+              <th class="p-4 font-semibold">La conversación suele favorecer</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700">
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">¿El objetivo es trazabilidad para temas de FX?</td>
+              <td class="p-4">Trazabilidad, Auditoria y analisis de las grabaciones</td>
+              <td class="p-4">Genesys</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">¿El objetivo es transformar CX o consolidar stack?</td>
+              <td class="p-4">Transformar journeys, automatización y experiencia</td>
+              <td class="p-4">Genesys</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">¿El ecosistema Cisco ya domina la arquitectura?</td>
+              <td class="p-4">Sí, colaboración, voz e infraestructura Cisco son estratégicos</td>
+              <td class="p-4">Cisco Webex</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">¿Se necesitan journeys avanzados y AI CX profunda?</td>
+              <td class="p-4">Sí, es una prioridad de negocio</td>
+              <td class="p-4">Genesys</td>
+            </tr>
+            <tr class="border-b border-slate-100">
+              <td class="p-4 font-semibold text-slate-900">¿La prioridad es rapidez de alineación con operación actual?</td>
+              <td class="p-4">Sí, especialmente en cuentas Cisco-centric</td>
+              <td class="p-4">Cisco Webex</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">¿Qué importa más: profundidad funcional o simplicidad ecosistémica?</td>
+              <td class="p-4">Depende del caso; esta es la decisión central</td>
+              <td class="p-4">Ambos son válidos bajo lógicas distintas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="card p-8 bg-slate-900 text-white">
+        <p class="text-sm uppercase tracking-[0.2em] text-slate-300 mb-3">Conclusión</p>
+        <h3 class="text-3xl font-bold mb-4">La comparación más útil no es producto contra producto, sino estrategia contra estrategia.</h3>
+        <p class="text-slate-200 leading-8 max-w-5xl">El panorama queda más claro: <strong>Genesys</strong> sobresale cuando el cliente busca una plataforma de customer experience más profunda, orquestada y orientada a AI; <strong>Cisco Webex</strong> sobresale cuando la prioridad es aprovechar una base instalada fuerte de colaboración, voz e infraestructura empresarial. La decisión correcta depende del grado de complejidad CX, la madurez operativa, el stack existente y el nivel de cambio que la organización realmente está dispuesta a ejecutar.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.topic-btn');
+    const panels = document.querySelectorAll('.topic-panel');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.topic).classList.add('active');
+      });
+    });
+
+    const ctx = document.getElementById('impactChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Journey orchestration', 'AI conversacional', 'WEM integrado', 'Voz enterprise', 'Ecosistema colaboración', 'Transformación CX'],
+        datasets: [
+          {
+            label: 'Genesys Cloud CX',
+            data: [9, 9, 8, 7, 6, 9],
+            backgroundColor: 'rgba(255, 90, 31, 0.75)',
+            borderColor: 'rgba(255, 90, 31, 1)',
+            borderWidth: 1,
+            borderRadius: 8
+          },
+          {
+            label: 'Cisco Webex Contact Center',
+            data: [6, 6, 6, 9, 9, 7],
+            backgroundColor: 'rgba(31, 111, 235, 0.75)',
+            borderColor: 'rgba(31, 111, 235, 1)',
+            borderWidth: 1,
+            borderRadius: 8
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.dataset.label + ': ' + context.raw + '/10';
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 10,
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
